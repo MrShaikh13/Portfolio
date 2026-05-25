@@ -1,0 +1,188 @@
+/* hero Section */
+.portfolio-hero {
+  position: relative;
+  display: flex;
+  min-height: 70vh;
+  width: 100%;
+
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1.3rem;
+  color: var(--foreground);
+}
+
+.portfolio-stage {
+  position: relative;
+  width: min(100%, 880px);
+  height: clamp(400px, 65vw, 580px);
+}
+
+.portfolio {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Black", system-ui, sans-serif;
+  font-size: clamp(4rem, 17vw, 9.6rem);
+  font-weight: 900;
+  /* line-height: 0.75; */
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.portfolio span {
+  position: absolute;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.portfolio span:nth-child(1) {
+  font-size: clamp(4.5rem, 1rem + 19vw, 11rem);
+  left: 1%;
+  top: 15%;
+  transform: rotate(-6deg);
+}
+
+.portfolio span:nth-child(2) {
+  left: 15%;
+  top: 33%;
+  transform: rotate(0deg);
+}
+
+.portfolio span:nth-child(3) {
+  left: 24%;
+  top: 13%;
+  transform: rotate(28deg);
+}
+
+.portfolio span:nth-child(4) {
+  left: 39%;
+  top: 0;
+  font-size: 1.32em;
+  transform: rotate(1deg);
+}
+
+.portfolio span:nth-child(5) {
+  left: 55%;
+  top: 16%;
+  font-size: 0.95em;
+  transform: rotate(22deg);
+}
+
+.portfolio span:nth-child(6) {
+  left: 61%;
+  top: 35%;
+  transform: rotate(3deg);
+}
+
+.portfolio span:nth-child(7) {
+  left: 73%;
+  top: 24%;
+  transform: rotate(-8deg);
+}
+
+.portfolio span:nth-child(8) {
+  left: 83%;
+  top: 14%;
+  transform: rotate(8deg);
+}
+
+.portfolio span:nth-child(9) {
+  left: 91%;
+  top: 33%;
+  transform: rotate(3deg);
+}
+
+.portfolio-year {
+  position: absolute;
+  top: 7rem;
+  left: calc(48% + min(25vw, 250px));
+  z-index: 3;
+  margin: 0;
+  color: var(--secondary-text);
+  font-family: Impact, "Arial Black", system-ui, sans-serif;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.portfolio-name {
+  position: absolute;
+  top: clamp(4.5rem, 40vw, 18rem);
+  left: calc(50% - min(38vw, 335px));
+  z-index: 3;
+  margin: 0;
+  color: var(--secondary-text);
+  font-family: "Arial Black", system-ui, sans-serif;
+  font-size: clamp(0.7rem, 1.7vw, 1.05rem);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.portfolio-person {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  z-index: 2;
+  width: min(52vw, 390px);
+  max-width: 88%;
+  height: auto;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .portfolio-hero {
+    min-height: 78vh;
+    padding-top: 5.75rem;
+  }
+
+  .portfolio-stage {
+    height: 430px;
+  }
+
+  .portfolio {
+    font-size: clamp(3.6rem, 18vw, 6.4rem);
+  }
+
+  .portfolio-person {
+    top: 20%;
+    width: min(72vw, 310px);
+  }
+
+  .portfolio-year {
+    left: auto;
+    right: 10%;
+  }
+
+  .portfolio-name {
+    top: 16.6rem;
+    left: 8%;
+  }
+}
+
+/* about */
+
+.shadowimage {
+  box-shadow: var(--shadow-img);
+}
+.shadowimage:hover {
+  box-shadow: var(--shadow-img-hover);
+}
+
+/* resume */
+.textShadow {
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 7px rgba(0, 0, 0, 0.5));
+}
+
+.shadowbox {
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.5s ease-out;
+}
+
+.shadowbox:hover {
+  box-shadow: var(--shadow-card-hover);
+  transition: box-shadow 0.1s ease-out;
+}

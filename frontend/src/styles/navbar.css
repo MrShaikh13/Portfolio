@@ -1,0 +1,184 @@
+.menu {
+  position: relative;
+  width: 500px;
+  height: 70px;
+  background: linear-gradient(135deg, #98baff, #011134);
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 727px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-barger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    top: 250px;
+    right: -110px;
+    width: 150px;
+    height: 250px;
+    border-radius: 20px 0 0 20px;
+    padding: 40px 0;
+    background: linear-gradient(180deg, #98baffde, #0d0f13ed);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: right 0.7s cubic-bezier(0.5, 1.8, 0.3, 0.8);
+  }
+  
+  .menu-barger:hover {
+    align-items: center;
+    right: 0;
+    transition: right 0.4s ease-in-out;
+  }
+
+  .icons{
+    left: 13px;
+  }
+
+
+  .bubble {
+    display: none;
+  }
+}
+
+.menu-item {
+  position: relative;
+  /* background-color: red; */
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition:
+    transform 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s,
+    opacity 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s,
+    scale 0.4s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+
+.menu-item .icon {
+  transform: translateY(10px);
+  scale: 1;
+  transition: transform 0.4s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+.menu-item:hover {
+  opacity: 0.8;
+  scale: 1.2;
+}
+
+.menu-item .link {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.4s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+
+.menu-item-home {
+  transform: translateY(0px);
+  opacity: 1;
+  scale: 1.15;
+}
+
+.menu-item-home .icon {
+  transform: translateY(0px);
+}
+
+.menu-item-about {
+  transform: translateY(0px);
+  opacity: 1;
+  scale: 1.2;
+}
+
+.menu-item-about .icon {
+  transform: translateY(0px);
+}
+
+.menu-item-projects {
+  transform: translateY(0px);
+  opacity: 1;
+  scale: 1.2;
+}
+
+.menu-item-projects .icon {
+  transform: translateY(0px);
+}
+
+.menu-item-home .link {
+  opacity: 1;
+  transform: translateY(0px);
+  transition:
+    transform 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s,
+    opacity 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+
+.menu-item-about .link {
+  opacity: 1;
+  transform: translateY(0px);
+  transition:
+    transform 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s,
+    opacity 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+
+.menu-item-projects .link {
+  opacity: 1;
+  transform: translateY(0px);
+  transition:
+    transform 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s,
+    opacity 0.5s cubic-bezier(0.68, -0.9, 0.42, 1.9) 0.2s;
+}
+
+.bubble {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  width: 130px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+  box-shadow:
+    inset 10px 20px 30px 2px rgba(0, 0, 0, 0.1),
+    inset 10px 10px 15px 2px rgba(255, 255, 255, 0.6),
+    10px 20px 20px 2px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px 2px rgba(255, 255, 255, 0.3);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.home-bubble {
+  left: 3%;
+}
+
+.about-bubble {
+  left: 37%;
+}
+
+.projects-bubble {
+  left: 70%;
+}
+
+.contact-bubble {
+  left: 170%;
+  scale: 0;
+}
+.all-bubble {
+  left: -100%;
+  scale: 0;
+}
+
+.all-icon:active ~ .menu .contact-bubble {
+  scale: 2;
+}
+.navbar:has(.contact-icon:active) .all-bubble {
+  scale: 2;
+}
+
+.remove-bubble {
+  scale: 0;
+}

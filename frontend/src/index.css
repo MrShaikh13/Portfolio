@@ -1,0 +1,216 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+
+/* ======================================
+   TAILWIND THEME CONNECTION
+====================================== */
+
+@theme inline {
+  /* width */
+  --width-lg-img: var(--width-lg-img);
+  --width-md-img: var(--width-md-img);
+  /* COLORS */
+
+  --color-background: var(--background);
+
+  --color-foreground: var(--foreground);
+
+  --color-sec-background: var(--sec-background);
+
+  --color-card: var(--card);
+
+  --color-primary: var(--primary);
+
+  --color-primary-text: var(--primary-text);
+
+  --color-secondary: var(--secondary);
+
+  --color-secondary-text: var(--secondary-text);
+
+  --color-border: var(--border);
+
+  /* FONT SIZE */
+
+  --text-fs-sm: var(--fs-sm);
+
+  --text-fs-md: var(--fs-md);
+
+  --text-fs-lg: var(--fs-lg);
+
+  /* SPACING */
+
+  --spacing-section: var(--space-section);
+
+  --spacing-card: var(--space-card);
+
+  --spacing-button: var(--space-button);
+
+  --spacing-primary-padding: var(--space-primary-padding);
+
+  /* RADIUS */
+
+  --radius-card: var(--radius-card);
+
+  /* SHADOW */
+
+  --shadow-card: var(--shadow-card);
+}
+
+/* ======================================
+   LIGHT THEME
+====================================== */
+
+:root {
+  /* width */
+  /* --width-lg-img: clamp(600px, 60vw, 750px); */
+  /* --width-md-img: clamp(500px, 80vw, 700px); */
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --fs-sm: clamp(0.875rem, 1vw, 1rem);
+
+  --fs-md: clamp(1rem, 1.5vw, 1.3rem);
+
+  --fs-lg: clamp(2rem, 5vw, 4rem);
+
+  /* =========================
+     SPACING
+  ========================= */
+
+  --space-button: clamp(0.8rem, 1vw, 1rem);
+
+  --space-card: clamp(1.5rem, 3vw, 3rem);
+
+  --space-section: clamp(2rem, 6vw, 8rem);
+
+  --space-primary-padding: clamp(0.5rem, 7vw - 2rem, 5rem);
+
+  /* =========================
+     COLORS
+  ========================= */
+
+  --background: oklch(91.78% 0.01078 76.463);
+
+  --foreground: oklch(0.145 0 0);
+
+  --primary-text: oklch(48.786% 0.01292 17.369);
+
+  --secondary: oklch(51.867% 0.08051 63.73);
+
+  --secondary-text: oklch(51.867% 0.08051 63.73);
+
+  --sec-background: oklch(68.463% 0.00232 15.365 / 0.481);
+
+  --border: oklch(0.9 0 0);
+
+  --card: transparent;
+
+  /* =========================
+    EFFECTS
+  ========================= */
+
+  --radius-card: 2rem;
+
+  --shadow-card: 0 3px 5px #bebebe, 0 -3px 5px #626c3a5d;
+
+  --shadow-card-hover: 0px 10px 15px 5px #bebebe, -0px -10px 15px 3px #626c3a5d;
+
+  --shadow-img:
+    3px 3px 5px 1px rgba(0, 0, 0, 0.5), -1px -1px 3px 1px rgba(0, 0, 0, 0.5);
+
+  --shadow-img-hover:
+    8px 10px 15px 2px rgba(0, 0, 0, 0.5), -2px -3px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================
+   SYSTEM DARK MODE
+====================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Gradients are not supported in all browsers for CSS variables,
+       causing issues with dark mode. */
+    --background: #4b4b4b;
+
+    --foreground: oklch(100% 0.00011 271.152);
+
+    --primary-text: #cfcfd6;
+
+    --secondary: oklch(67.736% 0.00586 16.579);
+
+    --secondary-text: oklch(66.35% 0.10184 190.031);
+
+    --border: oklch(1 0 0 / 10%);
+
+    --card: #161618;
+
+    --shadow-card: 0 3px 5px #949393c6, 0 -3px 5px #6b76415d;
+
+    --shadow-card-hover:
+      0px 10px 10px 3px #949393c6, -0px -10px 10px 1px #6b76415d;
+
+    --shadow-img:
+      3px 3px 5px 1px rgba(0, 0, 0, 0.5), -1px -1px 3px 1px rgba(0, 0, 0, 0.5);
+
+    --shadow-img-hover:
+      8px 10px 15px 2px rgba(0, 0, 0, 0.5), -2px -3px 8px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ======================================
+   BASE STYLES
+====================================== */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  @media (max-width: 727px) {
+    body::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  body {
+    @apply bg-background
+      text-foreground;
+
+    overflow-x: hidden;
+
+    font-family: sans-serif;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+}
+
+.main {
+  font-size: var(--fs-lg);
+}
+
+/* :root {
+  font-size: 16px;
+
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --fs-md: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --fs-lg: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --fs-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f4f4f4;
+  --border: #dddddd;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.1);
+  --transition: 0.3s ease;
+} */
