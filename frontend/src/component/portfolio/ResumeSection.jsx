@@ -22,7 +22,7 @@ const Resume = () => {
               </p>
               <p>
                 <span className="text-foreground text-base">Backend:</span>
-                Node.js, Express, API Development
+                Node.js, Express, API Developer
               </p>
               <p>
                 <span className="text-foreground text-base">Databases:</span>
@@ -30,12 +30,14 @@ const Resume = () => {
               </p>
               <p>
                 <span className="text-foreground text-base">Tools:</span> Git,
-                GitHub, VS Code, Postman
+                GitHub, VS Code, Cursor
               </p>
               <p>
-                <span className="text-foreground text-base">Core Concepts:</span>
-                REST API, state management, responsive design, JavaScript
-                fundamentals, basic DSA
+                <span className="text-foreground text-base">
+                  Core Concepts:
+                </span>
+                REST API, state management, responsive design, CRUD Operations,
+                JavaScript fundamentals, basic DSA
               </p>
             </div>
           </article>
@@ -54,7 +56,9 @@ const Resume = () => {
             </div>
           </article>
           <article className="bg-card p-5 rounded-2xl shadowbox">
-            <h3 className="text-xl font-bold text-foreground">Learning & Growth</h3>
+            <h3 className="text-xl font-bold text-foreground">
+              Learning & Growth
+            </h3>
             <ul className="text-sm lg:text-base font-semibold text-secondary list-disc list-inside">
               <li>Regularly practice problem-solving and coding challenges</li>
               <li>Build personal projects to apply new concepts</li>
@@ -70,13 +74,16 @@ const Resume = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-5 gap-4 lg:h-[calc(100vh-8rem)]">
           <article className="bg-card shadowbox min-h-70 rounded-2xl p-5  lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-3">
             <div className="flex flex-col gap-1">
-              <h3 className="text-lg font-semibold text-foreground">WEB DEVELOPMENT</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                WEB DEVELOPMENT
+              </h3>
               <p className="text-primary-text font-semibold mt-3 max-w-sm text-sm lg:text-base leading-6">
-                We build responsive, fast, and secure websites using modern
-                technologies like React, Next.js, and Node.js. We also provide
-                ongoing maintenance and support to ensure your website stays up
-                to date and running smoothly. Built with modern frameworks and
-                best practices for performance and scalability.
+                Practicing modern web development using React, Next.js, Node.js,
+                HTML, CSS, and JavaScript. Building responsive, fast, and secure
+                web applications while following industry best practices for
+                performance, scalability, and clean code architecture.
+                Continuously improving frontend and backend development skills
+                through hands-on projects and learning.
               </p>
             </div>
           </article>
@@ -92,14 +99,20 @@ const Resume = () => {
                 language model for responses, and used MongoDB Atlas to store
                 chat history across sessions.
               </p>
-              <p>
-                React • Node.js • Express • MongoDB • OpenAI API
-              </p>
+              <p>React • Node.js • Express • MongoDB • OpenAI API</p>
               <a
-                href="#"
+                target="_blank"
+                href="https://github.com/MrShaikh13/mern-chatbot"
                 className="text-blue-700 hover:text-blue-900 hover:drop-shadow-lg "
               >
                 View on GitHub
+              </a>
+              <a
+                target="_blank"
+                href="https://mern-chatbott.netlify.app"
+                className="text-green-700 hover:text-green-900 hover:drop-shadow-lg "
+              >
+                View on Project
               </a>
             </div>
           </article>
@@ -116,12 +129,11 @@ const Resume = () => {
                 relying on frameworks.
               </p>
               <p>HTML • CSS • JavaScript</p>
-              <a
-                href="#"
-                className="text-blue-700 hover:text-blue-900 hover:drop-shadow-lg "
+              <p
+                className="text-blue-900 hover:text-blue-900 hover:drop-shadow-lg cursor-pointer"
               >
-                View on GitHub
-              </a>
+                Work is currently underway on this Project.
+              </p>
             </div>
           </article>
           <article className="bg-card shadowbox min-h-60 rounded-2xl border p-5 lg:col-start-3 lg:row-start-3 lg:col-span-1 lg:row-span-3">
@@ -134,9 +146,12 @@ const Resume = () => {
                 projects, skills, and resume with a focus on clean UI and
                 performance.
               </p>
-              <p className="line-clamp-none lg:line-clamp-1">HTML • CSS • JavaScript</p>
+              <p className="line-clamp-none lg:line-clamp-1">
+                HTML • CSS • JavaScript
+              </p>
               <a
-                href="#"
+                target="_blank"
+                href="https://github.com/MrShaikh13/Portfolio"
                 className="text-blue-700 hover:text-blue-900 hover:drop-shadow-lg "
               >
                 View on GitHub
@@ -144,7 +159,11 @@ const Resume = () => {
             </div>
           </article>
           <article className="bg-card relative shadowbox min-h-60 rounded-2xl border p-5 lg:flex justify-center items-center  hidden lg:col-start-4 lg:col-span-2 lg:row-start-3 lg:row-span-3">
-            <img src="./iam.png" alt="Musharraf Shaikh" className="w-full mx-auto object-cover"/>
+            <img
+              src="./iam.png"
+              alt="Musharraf Shaikh"
+              className="w-full mx-auto object-cover"
+            />
           </article>
         </div>
       </div>

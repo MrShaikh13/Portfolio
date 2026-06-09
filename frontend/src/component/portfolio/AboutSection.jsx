@@ -18,9 +18,8 @@ const About = () => {
           </p>
           <p>
             Currently, I'm preparing for software development internships where
-            I can contribute to real products, learn from experienced
-            developers, and grow as an engineer by working on meaningful
-            features.
+            I can contribute to real products, learn from youtube, ChatGPT and grow as a Devloper by working on meaningful
+            Project.
           </p>
         </div>
         <div className="w-full lg:w-2/5 flex justify-center">

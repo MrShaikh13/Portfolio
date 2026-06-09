@@ -67,7 +67,6 @@ const ContactSection = () => {
     try {
       setIsSubmitting(true);
       const res = await projectService.sendMessage(formData);
-      // console.log(res);
       toast.success("Message sent successfully");
       setSubmited(true);
       let timer = 6;
