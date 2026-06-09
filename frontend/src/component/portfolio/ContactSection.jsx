@@ -182,9 +182,9 @@ const ContactSection = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`disabled:opacity-50 disabled:cursor-not-allowed bg-white text-black px-4 py-2 rounded-2xl w-1/4 active:scale-95 transition-all cursor-pointer`}
+            className={`disabled:opacity-50 disabled:cursor-not-allowed bg-white text-black px-4 py-2 rounded-2xl max-sm:min-w-2/5 w-1/4 active:scale-95 transition-all cursor-pointer`}
           >
-            {isSubmitting ? "Sending..." : "Send "}
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
           {success && <p className="text-green-500">{success}</p>}
         </form>
