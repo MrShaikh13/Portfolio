@@ -18,14 +18,14 @@ const limiter = rateLimit({
 app.use("/api/contact", limiter);
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
   }),
 );
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World")
-})
+  res.send("Hello World");
+});
 
 app.use("/api/contact", contactRoutes);
 
