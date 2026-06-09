@@ -9,7 +9,7 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState("");
 
   return (
-    <nav className="navbar flex justify-between items-center py-4 px-primary-padding sticky top-0 z-50 bg-black/5 backdrop-blur-sm shadow-lg shadow-black/30">
+    <nav className="navbar flex justify-between items-center py-4 px-primary-padding sticky max-sm:fixed max-sm:right-0 max-sm:left-0 top-0 z-50 bg-black/5 backdrop-blur-sm shadow-lg shadow-black/30">
       <Link
         to="/"
         className={`all-icon bg-white text-black font-bold text-2xl px-4 py-4 rounded-full  ${activeItem !== "all" ? "shadow-lg shadow-black/50 active:shadow-none ease-in-out transition-all duration-500" : ""}`}
