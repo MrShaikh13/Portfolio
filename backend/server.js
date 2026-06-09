@@ -16,12 +16,12 @@ const limiter = rateLimit({
 });
 
 app.use("/api/contact", limiter);
-// app.use(
-//   cors({
-//     origin: process.env.CLIENT_URL || "http://localhost:5173",
-//   }),
-// );
-app.use(cors())
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+  }),
+);
+// app.use(cors())
 app.use(express.json());
 
 app.get("/", (req, res) => {
