@@ -71,8 +71,8 @@ const Resume = () => {
         <h2 className="text-foreground textShadow text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl ">
           Projects & Hands-on Experience
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-5 gap-4 lg:h-[calc(100vh-8rem)]">
-          <article className="bg-card shadowbox min-h-70 rounded-2xl p-5  lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-5 gap-4 lg:min-h-[calc(100vh-5rem)] lg:[grid-template-areas:'box1_box1_box2_box2_box2''box1_box1_box2_box2_box2''box1_box1_box4_box5_box5''box3_box3_box4_box5_box5''box3_box3_box4_box5_box5']">
+          <article className="bg-card shadowbox min-h-70 rounded-2xl p-5  lg:[grid-area:box1]">
             <div className="flex flex-col gap-1">
               <h3 className="text-lg font-semibold text-foreground">
                 WEB DEVELOPMENT
@@ -87,7 +87,7 @@ const Resume = () => {
               </p>
             </div>
           </article>
-          <article className="bg-card shadowbox min-h-50 flex flex-col items-center justify-center rounded-2xl p-5 lg:col-start-3 lg:col-span-3 lg:row-start-1 lg:row-span-2 ">
+          <article className="bg-card shadowbox min-h-50 flex flex-col items-center justify-center rounded-2xl p-5 lg:[grid-area:box2] ">
             <div className="flex flex-col gap-1">
               <h3 className="text-foreground font-bold text-lg md:text-xl lg:text-2xl">
                 Chatbot App
@@ -100,23 +100,25 @@ const Resume = () => {
                 chat history across sessions.
               </p>
               <p>React • Node.js • Express • MongoDB • OpenAI API</p>
-              <a
-                target="_blank"
-                href="https://github.com/MrShaikh13/mern-chatbot"
-                className="text-blue-700 hover:text-blue-900 hover:drop-shadow-lg "
-              >
-                View on GitHub
-              </a>
-              <a
-                target="_blank"
-                href="https://mern-chatbott.netlify.app"
-                className="text-green-700 hover:text-green-900 hover:drop-shadow-lg "
-              >
-                View on Project
-              </a>
+              <div className="flex gap-5">
+                <a
+                  target="_blank"
+                  href="https://github.com/MrShaikh13/mern-chatbot"
+                  className="text-blue-700 hover:text-blue-900 hover:drop-shadow-lg "
+                >
+                  View on GitHub
+                </a>
+                <a
+                  target="_blank"
+                  href="https://mern-chatbott.netlify.app"
+                  className="text-green-700 hover:text-green-900 hover:drop-shadow-lg "
+                >
+                  View on Project
+                </a>
+              </div>
             </div>
           </article>
-          <article className="bg-card shadowbox min-h-60 rounded-2xl border p-5 lg:col-start-1 lg:col-span-2 lg:row-start-4 lg:row-span-2">
+          <article className="bg-card shadowbox min-h-60 rounded-2xl border p-5 lg:[grid-area:box3]">
             <div className="flex flex-col gap-1">
               <h3 className="text-foreground font-bold text-lg md:text-xl lg:text-2xl">
                 Ecommerce Website
@@ -129,19 +131,17 @@ const Resume = () => {
                 relying on frameworks.
               </p>
               <p>HTML • CSS • JavaScript</p>
-              <p
-                className="text-blue-900 hover:text-blue-900 hover:drop-shadow-lg cursor-pointer"
-              >
+              <p className="text-blue-900 hover:text-blue-900 hover:drop-shadow-lg cursor-pointer">
                 Work is currently underway on this Project.
               </p>
             </div>
           </article>
-          <article className="bg-card shadowbox min-h-60 rounded-2xl border p-5 lg:col-start-3 lg:row-start-3 lg:col-span-1 lg:row-span-3">
+          <article className="bg-card shadowbox min-h-60 rounded-2xl border p-5 lg:[grid-area:box4]">
             <div className="flex flex-col gap-1">
               <h3 className="text-foreground font-bold text-lg md:text-xl lg:text-2xl">
                 Personal Portfolio Website
               </h3>
-              <p className="text-primary-text font-semibold text-sm lg:text-base md:text-base sm:text-base line-clamp-none lg:line-clamp-6 ">
+              <p className="text-primary-text font-semibold text-sm lg:text-base md:text-base sm:text-base line-clamp-none lg:line-clamp-5 ">
                 Designed and built a responsive portfolio website to showcase
                 projects, skills, and resume with a focus on clean UI and
                 performance.
@@ -158,7 +158,7 @@ const Resume = () => {
               </a>
             </div>
           </article>
-          <article className="bg-card relative shadowbox min-h-60 rounded-2xl border p-5 lg:flex justify-center items-center  hidden lg:col-start-4 lg:col-span-2 lg:row-start-3 lg:row-span-3">
+          <article className="bg-card relative shadowbox min-h-60 rounded-2xl border p-5 lg:flex justify-center items-center  hidden lg:[grid-area:box5]">
             <img
               src="./iam.png"
               alt="Musharraf Shaikh"
