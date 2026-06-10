@@ -3,15 +3,45 @@ import { projectService } from "../../services/projectService";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+const initialForm = {
+  name: "",
+  email: "",
+  message: "",
+};
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+}
+
+function validateForm(formData) {
+  const trimmedEmail = formData.email.trim();
+
+  return {
+    name: formData.name
+      ? formData.name.length >= 2
+        ? formData.name.length <= 20
+          ? ""
+          : "Name must be less then 20 characters."
+        : "Name must be at least 2 characters."
+      : "Name is required.",
+    email: trimmedEmail
+      ? isValidEmail(trimmedEmail)
+        ? ""
+        : "Please enter a valid email address."
+      : "Email is required.",
+    message: formData.message
+      ? formData.message.length >= 10
+        ? ""
+        : "message must be at least 10 characters."
+      : "message is required.",
+  };
+}
+
 const ContactSection = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [formData, setFormData] = useState(initialForm);
   const [errors, setErrors] = useState({});
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [success, setSuccess] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submited, setSubmited] = useState(false);
@@ -19,55 +49,39 @@ const ContactSection = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
+    const nextFormData = {
       ...formData,
       [name]: value,
-    });
+    };
+    setFormData(nextFormData);
+
+    if (hasSubmitted) {
+      setErrors(validateForm(nextFormData));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let newErrors = {};
+    const nextErrors = validateForm(formData);
 
-    setSuccess("");
-
-    //Name Validation
-    if (formData.name.trim() === "") {
-      newErrors.name = "Name is required";
-    } else if (formData.name.trim().length < 3) {
-      newErrors.name = "Name must be at least 3 characters";
-    }
-
-    //Email Validation
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
-    } else if (!emailPattern.test(formData.email)) {
-      newErrors.email = "Invalid email address";
-    }
-
-    //Message Validation
-    if (formData.message.trim() === "") {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
+    setHasSubmitted(true);
+    setErrors(nextErrors);
 
     //Error check
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    if (Object.values(nextErrors).some(Boolean)) {
+      setIsSubmitting(false);
       return;
     }
 
     // Success
+    setHasSubmitted(false);
     setErrors({});
 
     try {
       setIsSubmitting(true);
-      const res = await projectService.sendMessage(formData);
-      toast.success("Message sent successfully");
+      const response = await projectService.sendMessage(formData);
+      toast.success("Message sent successfully ✅");
       setSubmited(true);
       let timer = 6;
       const interval = setInterval(() => {
@@ -79,20 +93,14 @@ const ContactSection = () => {
           navigate("/");
         }
       }, 1000);
+      setSuccess("Message sent successfully ✅");
+      setFormData(initialForm);
     } catch (error) {
-      // console.error(error);
-      toast.error("Failed to send message!");
+      console.log(error);
+      toast.error("Something went wrong!");
     } finally {
       setIsSubmitting(false);
     }
-
-    setSuccess("Message sent successfully ✅");
-    // console.log(formData);
-    // setFormData({
-    //   name: "",
-    //   email: "",
-    //   message: "",
-    // });
   };
   return (
     <section className="w-full min-h-screen flex flex-col lg:flex-row gap-5 px-primary-padding">
