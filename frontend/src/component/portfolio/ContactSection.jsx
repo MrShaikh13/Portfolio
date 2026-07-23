@@ -103,7 +103,7 @@ const ContactSection = () => {
     }
   };
   return (
-    <section className="w-full min-h-screen flex flex-col lg:flex-row gap-5 px-primary-padding">
+    <section className="w-full min-h-screen flex flex-col lg:flex-row gap-5 px-primary-padding" id="contact">
       <div className="w-full lg:w-1/2 flex flex-col justify-center gap-10 mt-2 lg:mb-20">
         <div className="w-full">
           <h2 className="text-foreground text-xl font-bold sm:text-2xl md:text-3xl lg:text-5xl">
