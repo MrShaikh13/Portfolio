@@ -1,6 +1,6 @@
 const Resume = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col gap-20 px-primary-padding my-10">
+    <section className="w-full min-h-screen flex flex-col gap-20 px-primary-padding my-10" id="resume">
       <div className="w-full">
         <h2 className="text-foreground text-2xl font-bold lg:font-bold md:text-3xl lg:text-5xl ">
           Resume

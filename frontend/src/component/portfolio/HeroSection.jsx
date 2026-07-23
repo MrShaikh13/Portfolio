@@ -2,7 +2,7 @@ import "../../styles/home.css";
 
 const Hero = () => {
   return (
-    <section className="portfolio-hero">
+    <section className="portfolio-hero" id="home">
 
       <p className="portfolio-year text-secondary-text">'22</p>
       <p className="portfolio-name">MUSHARRAF SHAIKH</p>
